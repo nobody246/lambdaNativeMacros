@@ -69,7 +69,6 @@
                         #f))
           (fmt-flag-mode #f)
           (ret ""))
-     ;break apart strings based on format 
      (for-each
       (lambda(x)
         (let* ((fmt-arg (if (and fmt-args (not (null? fmt-args)))
