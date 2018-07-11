@@ -1,2 +1,5 @@
 # lambdanative-macros
-some extra macros for lambdanative that make me feel more comfortable
+Some extra macros for lambdanative that make me feel more comfortable.
+Just place global-macros.scm in your app's folder.
+
+
