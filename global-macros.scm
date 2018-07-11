@@ -60,13 +60,14 @@
 ;sprintf, takes ~A for obj ~S for "string" ~% and ~N for line-break
 (define-macro (sprintf #!rest args..)
   `(let* ((a (list ,@args..))
-          (fmt-str (if (> (length a) 0)
+          (arg-cnt (length a))
+          (fmt-str (if (> arg-cnt 0)
                        (car a)
                        #f))
-          (fmt-args (if fmt-str (cdr a) '()))
-          (fmt-args (if (not (null? (cdr a)))
+          (fmt-args (if (and fmt-str
+                             (> arg-cnt 1))
                         (cdr a)
-                        #f))
+                        '()))
           (fmt-flag-mode #f)
           (ret ""))
      (for-each
