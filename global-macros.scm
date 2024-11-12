@@ -37,7 +37,7 @@
            (begin (string-append! retv
                                   (list-ref ,strings.. i)
                                   ,delim)
-                  (loop (add1 i 1)))
+                  (loop (add1 i)))
            retv))))
 
 (define-macro (symbol-append #!rest vars..)
